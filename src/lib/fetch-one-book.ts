@@ -1,14 +1,19 @@
-export default async function fetchOneBook(id: number) {
-    const url = `http://localhost:12345/book/${id}`
+import { BookData } from "@/types";
 
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error()
-        }
+export default async function fetchOneBook(
+  id: number
+): Promise<BookData | null> {
+  const url = `https://onebite-books-server-qn59bymyw-easyhooons-projects.vercel.app/book/${id}`;
 
-        return await response.json()
-    } catch(err) {
-        console.error(err);
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error();
     }
+
+    return await response.json();
+  } catch (err) {
+    console.error(err);
+    return null;
+  }
 }
