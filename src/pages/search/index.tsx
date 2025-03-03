@@ -38,7 +38,7 @@ export default function Page() {
     <div>
       <Head>
         <title>한입북스 - 검색결과</title>
-        <meta property="og:image" content="/thummnail.png" />
+        <meta property="og:image" content="/thumbnail.png" />
         <meta property="og:title" content="한입북스 - 검색결과" />
         <meta
           property="og:description"

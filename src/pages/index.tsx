@@ -29,7 +29,7 @@ export default function Home({
     <>
       <Head>
         <title>한입북스</title>
-        <meta property="og:image" content="/thummnail.png" />
+        <meta property="og:image" content="/thumbnail.png" />
         <meta property="og:title" content="한입북스" />
         <meta
           property="og:description"
