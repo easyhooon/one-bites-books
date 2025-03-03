@@ -1,22 +1,22 @@
 import { BookData } from "@/types";
 
-export default async function fetchBooks(q?: string) : Promise<BookData []> {
-    // const == val, let == var
-    let url = `http://localhost:12345/book`;
- 
-    if (q) {
-        url += `/search?q=${q}` 
+export default async function fetchBooks(q?: string): Promise<BookData[]> {
+  // const == val, let == var
+  let url = `https://onebite-books-page-wine-chi.vercel.app//book`;
+
+  if (q) {
+    url += `/search?q=${q}`;
+  }
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error();
     }
 
-    try {
-        const response = await fetch(url)
-        if (!response.ok) {
-            throw new Error();
-        }
-
-        return await response.json()
-    } catch (err) {
-        console.error(err);
-        return [];
-    }
+    return await response.json();
+  } catch (err) {
+    console.error(err);
+    return [];
+  }
 }
