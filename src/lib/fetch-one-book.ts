@@ -3,7 +3,7 @@ import { BookData } from "@/types";
 export default async function fetchOneBook(
   id: number
 ): Promise<BookData | null> {
-  const url = `https://onebite-books-page-wine-chi.vercel.app//book/${id}`;
+  const url = `https://onebite-books-server-ivory-pi.vercel.app/book/${id}`;
 
   try {
     const response = await fetch(url);
